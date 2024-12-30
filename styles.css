@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr/1fr 3fr;
+    height: 100vh;
+    grid-template-areas: "sidebar header" "sidebar main" "sidebar main" "sidebar main";
+}
+
+.header {
+    grid-area: header;
+    box-shadow: 0px 5px 5px 0px rgba(117, 117, 117, 1);
+}
+
+.header-container {
+    display: grid;
+    grid-template: 1fr 1fr/ 1fr 1fr;
+    gap: 5px;
+    grid-template-areas: "notibar notibar" "profilebar profilebar";
+    text-align: center;
+}
+
+.header-container .notibar {
+
+    grid-area: notibar;
+}
+
+.notibar .notibar-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 20px 10px 5px 20px;
+    align-items: center;
+    width: 100%;
+}
+
+.notibar-container .searchbar {
+    display: flex;
+    align-items: center;
+}
+
+.searchbar input {
+    width: 100%;
+    padding: 6px;
+    border-radius: 6px;
+    border: none;
+    margin-left: 5px;
+    background-color: #E2E8F0;
+    color: aliceblue;
+}
+
+.notibar-container .noti {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.noti img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.header-container .profilebar {
+
+    grid-area: profilebar;
+}
+
+.profilebar .profilebar-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5px 10px 2px 30px;
+    align-items: center;
+
+}
+
+.profilebar-container .profile-info {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.profilebar-container .functions button {
+    padding: 8px;
+    cursor: pointer;
+    width: 21%;
+    border: none;
+    background-color: #1992D4;
+    color: aliceblue;
+    border-radius: 20px;
+    margin: auto 15px;
+    transition: 0.5s;
+}
+
+
+
+.profile-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.sidebar {
+    background-color: #1992D4;
+    grid-area: sidebar;
+}
+
+.sidebar .sidebar-container {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    padding: 10px;
+    justify-content: center;
+}
+
+.sidebar-container ul li {
+    list-style: none;
+    font-size: 20px;
+    color: aliceblue;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.sidebar-container ul li span {
+    margin-right: 15px;
+}
+
+.sidebar h2 {
+    color: aliceblue;
+    text-align: center;
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.sidebar h2 span {
+    margin-right: 10px;
+}
+
+.main {
+    grid-area: main;
+    background-color: #E2E8F0;
+    height: max-content;
+
+}
+
+.main .main-container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 2fr 1fr;
+    gap: 8px;
+    grid-template-areas: "projects announcements" "projects trending";
+    margin-top: 15px;
+}
+
+.main-container .projects {
+    grid-area: projects;
+}
+
+.projects h3 {
+    margin-left: 15px;
+}
+
+.projects .projects-container {
+    display: grid;
+    grid-template: 1fr 1fr 1fr/ 1fr 1fr;
+    grid-template-areas: "project1 project2" "project3 project4" "project5 project6";
+    gap: 20px;
+    margin: 15px;
+}
+
+.projects-container .project1 {
+    grid-area: project1;
+}
+
+.projects-container .project2 {
+
+    grid-area: project2;
+}
+
+.projects-container .project3 {
+
+    grid-area: project3;
+
+}
+
+.projects-container .project1,
+.project2,
+.project3,
+.project4,
+.project5,
+.project6 {
+    box-shadow: 2px 4px 5px 0px rgba(117, 117, 117, 1);
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    border-left: 5px solid rgb(219, 187, 5);
+
+}
+
+.projects-container p {
+    color: rgb(70, 70, 70);
+}
+
+.projects-container .project4 {
+
+    grid-area: project4;
+}
+
+.projects-container .project5 {
+
+    grid-area: project5;
+}
+
+.projects-container .project6 {
+
+    grid-area: project6;
+}
+
+.projects-container .icons {
+    margin: 10px 0;
+    cursor: pointer;
+    justify-self: end;
+    align-items: center;
+}
+
+.main-container .announcements {
+    grid-area: announcements;
+}
+
+.announcements .announcements-container {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    margin: 15px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.announcements h4 {
+    margin-left: 8px;
+}
+
+.announcements-container .announcement1,
+.announcement2 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(211, 211, 211);
+}
+
+.announcements-container p {
+    color: rgb(70, 70, 70);
+
+}
+
+.main-container .trending {
+
+    grid-row: trending;
+
+}
+
+.trending .trending-container {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    margin: 15px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.trending h4 {
+    margin-left: 8px;
+}
+
+.trending-container .trend-content {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.trending-container .trend-content p {
+    color: rgb(70, 70, 70);
+}
+
+.trending-container .trend-content img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
